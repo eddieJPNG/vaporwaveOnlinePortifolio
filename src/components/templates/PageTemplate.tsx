@@ -1,5 +1,5 @@
 import { type ReactNode } from 'react';
-import { Header } from '../organisms';
+import { Header } from '../organisms/Header';
 
 export interface PageTemplateProps {
   children: ReactNode;

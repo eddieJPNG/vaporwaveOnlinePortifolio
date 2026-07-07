@@ -5,6 +5,19 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Preconnect to external origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload critical fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- DNS prefetch for external services -->
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
     <!-- SEO Meta Tags -->
     <title>Edson Rocha da Silva - Portfólio | Desenvolvedor Back-End</title>
     <meta name="description" content="Portfólio profissional de Edson Rocha da Silva - Desenvolvedor Back-End com foco em Python, Node.js e Blockchain. Confira meus projetos e habilidades." />
@@ -32,6 +45,30 @@
     <!-- Theme Color -->
     <meta name="theme-color" content="#9b59b6" />
     <meta name="msapplication-TileColor" content="#9b59b6" />
+
+    <!-- Performance: Inline critical CSS -->
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      #root {
+        min-height: 100vh;
+      }
+      .loading-spinner {
+        width: 32px;
+        height: 32px;
+        border: 2px solid #9b59b6;
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
