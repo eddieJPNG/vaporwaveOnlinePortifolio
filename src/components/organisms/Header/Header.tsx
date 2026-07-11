@@ -23,7 +23,7 @@ export const Header = ({ onThemeToggle, isDark = false }: HeaderProps) => {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <a href="#home" className="text-2xl font-bold text-vaporwave-cyan">
-            Portfolio
+            Edson Dev - Portifólio
           </a>
 
           {/* Desktop Navigation */}

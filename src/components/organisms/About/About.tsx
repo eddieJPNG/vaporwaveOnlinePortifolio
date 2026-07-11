@@ -1,19 +1,37 @@
 import { personalInfo } from '../../../data/personal';
 import { SOCIAL_LINKS } from '../../../utils/constants';
 import { AnimatedSection } from '../../atoms/AnimatedSection';
+import headDecorative from '../../../assets/decorative/head.gif';
 
 export const About = () => {
   return (
     <section
       id="about"
-      className="py-20 px-4 bg-vaporwave-white-dark dark:bg-vaporwave-black-light"
+      className="relative py-20 px-4 bg-vaporwave-white-dark dark:bg-vaporwave-black-light overflow-hidden"
     >
-      <div className="max-w-4xl mx-auto text-center">
+      <img
+        src={headDecorative}
+        alt=""
+        aria-hidden="true"
+        className="absolute bottom-4 left-4 w-52 h-60 md:w-64 md:h-72 opacity-20 dark:opacity-10 pointer-events-none"
+      />
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
         <AnimatedSection>
           <h2 className="text-3xl font-bold text-vaporwave-black dark:text-vaporwave-white mb-8">
             Sobre Mim
           </h2>
         </AnimatedSection>
+        {personalInfo.imagem && (
+          <AnimatedSection delay={0.05}>
+            <div className="flex justify-center mb-6">
+              <img
+                src={personalInfo.imagem}
+                alt={`Foto de ${personalInfo.nome}`}
+                className="w-32 h-32 rounded-full border-4 border-vaporwave-purple object-cover"
+              />
+            </div>
+          </AnimatedSection>
+        )}
         <AnimatedSection delay={0.1}>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">{personalInfo.resumo}</p>
         </AnimatedSection>

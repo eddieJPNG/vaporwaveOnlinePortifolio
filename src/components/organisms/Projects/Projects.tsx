@@ -54,6 +54,13 @@ export const Projects = () => {
                   }
                 }}
               >
+                {project.imagem && (
+                  <img
+                    src={project.imagem}
+                    alt={project.titulo}
+                    className="w-full h-40 object-cover rounded-t-lg mb-4 -mx-6 -mt-6 w-[calc(100%+3rem)]"
+                  />
+                )}
                 <h3 className="text-xl font-bold text-vaporwave-purple mb-2">{project.titulo}</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">{project.descricao}</p>
                 <div className="flex flex-wrap gap-2 mb-4">

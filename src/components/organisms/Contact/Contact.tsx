@@ -4,6 +4,8 @@ import { Button, Input } from '../../atoms';
 import { AnimatedSection } from '../../atoms/AnimatedSection';
 import { contactFormSchema, type ContactFormData } from '../../../validations/contact';
 import { SITE_CONFIG } from '../../../utils/constants';
+import chatIcon from '../../../assets/icons-decorative/chat.png';
+import heroStreet from '../../../assets/backgrounds/street.gif';
 
 type FormStatus = 'idle' | 'sending' | 'success' | 'error';
 
@@ -91,12 +93,21 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4">
+    <section id="contact" className="relative py-20 px-4 overflow-hidden">
+      <img
+        src={heroStreet}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
+      />
       <div className="max-w-xl mx-auto">
         <AnimatedSection>
-          <h2 className="text-3xl font-bold text-center text-vaporwave-black dark:text-vaporwave-white mb-12">
-            Contato
-          </h2>
+          <div className="flex items-center justify-center gap-3 mb-12">
+            <img src={chatIcon} alt="" aria-hidden="true" className="w-8 h-8" />
+            <h2 className="text-3xl font-bold text-vaporwave-black dark:text-vaporwave-white">
+              Contato
+            </h2>
+          </div>
         </AnimatedSection>
         <AnimatedSection delay={0.1}>
           {status === 'success' && (

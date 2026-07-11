@@ -46,6 +46,13 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             transition={{ duration: 0.2 }}
             className="bg-vaporwave-white dark:bg-vaporwave-black-light rounded-lg p-6 shadow-2xl"
           >
+            {project.imagem && (
+              <img
+                src={project.imagem}
+                alt={project.titulo}
+                className="w-full h-48 object-cover rounded-t-lg mb-4 -mx-6 -mt-6 w-[calc(100%+3rem)]"
+              />
+            )}
             <div className="flex justify-between items-start mb-4">
               <h2 className="text-2xl font-bold text-vaporwave-purple">{project.titulo}</h2>
               <button

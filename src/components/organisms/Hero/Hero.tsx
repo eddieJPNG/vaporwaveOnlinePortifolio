@@ -1,6 +1,8 @@
 import { personalInfo } from '../../../data/personal';
 import { motion } from 'framer-motion';
 import { useReducedMotion } from '../../../hooks/useReducedMotion';
+import heroRoman from '../../../assets/backgrounds/roman.webp';
+import heroTrees from '../../../assets/backgrounds/hero-trees.gif';
 
 export const Hero = () => {
   const prefersReducedMotion = useReducedMotion();
@@ -21,9 +23,24 @@ export const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden"
+    >
+      <img
+        src={heroTrees}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover opacity-30 dark:opacity-20"
+      />
+      <img
+        src={heroRoman}
+        alt=""
+        aria-hidden="true"
+        className="absolute top-10 right-10 w-64 h-110 md:w-64 md:h-110 opacity-60 dark:opacity-40 pointer-events-none"
+      />
       <motion.div
-        className="text-center"
+        className="relative z-10 text-center"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

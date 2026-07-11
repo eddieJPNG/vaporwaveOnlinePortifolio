@@ -2,10 +2,17 @@ import { skills } from '../../../data/skills';
 import { SKILL_CATEGORIES } from '../../../utils/constants';
 import { SkillBadge } from '../../molecules';
 import { AnimatedSection } from '../../atoms/AnimatedSection';
+import tokyo from '../../../assets/backgrounds/tokyo.gif';
 
 export const Skills = () => {
   return (
-    <section id="skills" className="py-20 px-4">
+    <section id="skills" className="relative py-20 px-4 overflow-hidden">
+      <img
+        src={tokyo}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
+      />
       <div className="max-w-6xl mx-auto">
         <AnimatedSection>
           <h2 className="text-3xl font-bold text-center text-vaporwave-black dark:text-vaporwave-white mb-12">
@@ -27,6 +34,7 @@ export const Skills = () => {
                       key={skill.id}
                       name={skill.nome}
                       icon={skill.icone}
+                      iconPath={skill.iconePath}
                       level={skill.nivel}
                     />
                   ))}

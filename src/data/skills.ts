@@ -1,18 +1,48 @@
 import { type Skill } from '../types';
+import { getSkillIcon } from '../utils/iconImports';
 
 export const skills: Skill[] = [
   // Back-end
-  { id: 'python', nome: 'Python', categoria: 'Back-end', icone: '🐍', nivel: 'Avançado' },
-  { id: 'nodejs', nome: 'Node.js', categoria: 'Back-end', icone: '🟢', nivel: 'Avançado' },
+  {
+    id: 'python',
+    nome: 'Python',
+    categoria: 'Back-end',
+    icone: '🐍',
+    iconePath: getSkillIcon('python'),
+    nivel: 'Avançado',
+  },
+  {
+    id: 'nodejs',
+    nome: 'Node.js',
+    categoria: 'Back-end',
+    icone: '🟢',
+    iconePath: getSkillIcon('nodejs'),
+    nivel: 'Avançado',
+  },
   {
     id: 'typescript',
     nome: 'TypeScript',
     categoria: 'Back-end',
     icone: '🔷',
+    iconePath: getSkillIcon('typescript'),
     nivel: 'Intermediário',
   },
-  { id: 'fastapi', nome: 'FastAPI', categoria: 'Back-end', icone: '⚡', nivel: 'Intermediário' },
-  { id: 'nestjs', nome: 'NestJS', categoria: 'Back-end', icone: '🐱', nivel: 'Básico' },
+  {
+    id: 'fastapi',
+    nome: 'FastAPI',
+    categoria: 'Back-end',
+    icone: '⚡',
+    iconePath: getSkillIcon('fastapi'),
+    nivel: 'Intermediário',
+  },
+  {
+    id: 'nestjs',
+    nome: 'NestJS',
+    categoria: 'Back-end',
+    icone: '🐱',
+    iconePath: getSkillIcon('nestjs'),
+    nivel: 'Básico',
+  },
 
   // Banco de dados e Infra
   {
@@ -20,6 +50,7 @@ export const skills: Skill[] = [
     nome: 'MySQL',
     categoria: 'Banco de dados e Infra',
     icone: '🐬',
+    iconePath: getSkillIcon('mysql'),
     nivel: 'Intermediário',
   },
   {
@@ -27,29 +58,67 @@ export const skills: Skill[] = [
     nome: 'SQLite',
     categoria: 'Banco de dados e Infra',
     icone: '🗄️',
+    iconePath: getSkillIcon('sqlite'),
     nivel: 'Intermediário',
   },
-  { id: 'git', nome: 'Git', categoria: 'Banco de dados e Infra', icone: '📦', nivel: 'Avançado' },
+  {
+    id: 'git',
+    nome: 'Git',
+    categoria: 'Banco de dados e Infra',
+    icone: '📦',
+    iconePath: getSkillIcon('git'),
+    nivel: 'Avançado',
+  },
   {
     id: 'github',
     nome: 'GitHub',
     categoria: 'Banco de dados e Infra',
     icone: '🐙',
+    iconePath: getSkillIcon('github'),
     nivel: 'Avançado',
   },
 
   // Front-end
-  { id: 'html5', nome: 'HTML5', categoria: 'Front-end', icone: '🌐', nivel: 'Avançado' },
-  { id: 'css3', nome: 'CSS3', categoria: 'Front-end', icone: '🎨', nivel: 'Avançado' },
-  { id: 'react', nome: 'React', categoria: 'Front-end', icone: '⚛️', nivel: 'Intermediário' },
+  {
+    id: 'html5',
+    nome: 'HTML5',
+    categoria: 'Front-end',
+    icone: '🌐',
+    iconePath: getSkillIcon('html5'),
+    nivel: 'Avançado',
+  },
+  {
+    id: 'css3',
+    nome: 'CSS3',
+    categoria: 'Front-end',
+    icone: '🎨',
+    iconePath: getSkillIcon('css3'),
+    nivel: 'Avançado',
+  },
+  {
+    id: 'react',
+    nome: 'React',
+    categoria: 'Front-end',
+    icone: '⚛️',
+    iconePath: getSkillIcon('react'),
+    nivel: 'Intermediário',
+  },
   {
     id: 'bootstrap',
     nome: 'Bootstrap',
     categoria: 'Front-end',
     icone: '🎭',
+    iconePath: getSkillIcon('bootstrap'),
     nivel: 'Intermediário',
   },
-  { id: 'javascript', nome: 'JavaScript', categoria: 'Front-end', icone: '🟨', nivel: 'Avançado' },
+  {
+    id: 'javascript',
+    nome: 'JavaScript',
+    categoria: 'Front-end',
+    icone: '🟨',
+    iconePath: getSkillIcon('javascript'),
+    nivel: 'Avançado',
+  },
 
   // Blockchain
   {
@@ -57,17 +126,33 @@ export const skills: Skill[] = [
     nome: 'Solidity',
     categoria: 'Blockchain',
     icone: '💎',
+    iconePath: getSkillIcon('solidity'),
     nivel: 'Intermediário',
   },
-  { id: 'move', nome: 'Move (Sui)', categoria: 'Blockchain', icone: '🔄', nivel: 'Intermediário' },
+  {
+    id: 'move',
+    nome: 'Move (Sui)',
+    categoria: 'Blockchain',
+    icone: '🔄',
+    iconePath: getSkillIcon('move'),
+    nivel: 'Intermediário',
+  },
   {
     id: 'metamask',
     nome: 'Metamask',
     categoria: 'Blockchain',
     icone: '🦊',
+    iconePath: getSkillIcon('metamask'),
     nivel: 'Intermediário',
   },
-  { id: 'remix', nome: 'Remix IDE', categoria: 'Blockchain', icone: '🔨', nivel: 'Intermediário' },
+  {
+    id: 'remix',
+    nome: 'Remix IDE',
+    categoria: 'Blockchain',
+    icone: '🔨',
+    iconePath: getSkillIcon('remix'),
+    nivel: 'Intermediário',
+  },
 
   // Informática
   {
@@ -75,8 +160,23 @@ export const skills: Skill[] = [
     nome: 'Pacote Office',
     categoria: 'Informática',
     icone: '📊',
+    iconePath: getSkillIcon('office'),
     nivel: 'Intermediário',
   },
-  { id: 'canva', nome: 'Canva', categoria: 'Informática', icone: '🎨', nivel: 'Intermediário' },
-  { id: 'wix', nome: 'Wix', categoria: 'Informática', icone: '🕸️', nivel: 'Básico' },
+  {
+    id: 'canva',
+    nome: 'Canva',
+    categoria: 'Informática',
+    icone: '🎨',
+    iconePath: getSkillIcon('canva'),
+    nivel: 'Intermediário',
+  },
+  {
+    id: 'wix',
+    nome: 'Wix',
+    categoria: 'Informática',
+    icone: '🕸️',
+    iconePath: getSkillIcon('wix'),
+    nivel: 'Básico',
+  },
 ];

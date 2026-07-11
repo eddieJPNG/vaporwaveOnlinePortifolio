@@ -6,5 +6,7 @@ export type { IconProps } from './Icon';
 export { Input } from './Input';
 export type { InputProps } from './Input';
 export { LazySection } from './LazySection';
+export { SectionDivider } from './SectionDivider';
+export type { SectionDividerProps } from './SectionDivider';
 export { Text } from './Text';
 export type { TextProps } from './Text';

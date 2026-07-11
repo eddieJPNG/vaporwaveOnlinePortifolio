@@ -3,6 +3,7 @@ import { type HTMLAttributes, forwardRef } from 'react';
 export interface SkillBadgeProps extends HTMLAttributes<HTMLDivElement> {
   name: string;
   icon?: string;
+  iconPath?: string;
   level?: 'Básico' | 'Intermediário' | 'Avançado';
 }
 
@@ -13,7 +14,7 @@ const levelColors = {
 };
 
 export const SkillBadge = forwardRef<HTMLDivElement, SkillBadgeProps>(
-  ({ name, icon, level, className = '', ...props }, ref) => {
+  ({ name, icon, iconPath, level, className = '', ...props }, ref) => {
     return (
       <div
         ref={ref}
@@ -25,7 +26,11 @@ export const SkillBadge = forwardRef<HTMLDivElement, SkillBadgeProps>(
         title={level ? `${name} - ${level}` : name}
         {...props}
       >
-        {icon && <span className="text-lg">{icon}</span>}
+        {iconPath ? (
+          <img src={iconPath} alt={name} className="w-5 h-5 object-contain" />
+        ) : (
+          icon && <span className="text-lg">{icon}</span>
+        )}
         <span className="text-sm font-medium">{name}</span>
       </div>
     );

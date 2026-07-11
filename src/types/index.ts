@@ -25,6 +25,7 @@ export interface Skill {
   nome: string;
   categoria: SkillCategory;
   icone: string;
+  iconePath?: string;
   nivel?: SkillLevel;
 }
 
@@ -45,6 +46,7 @@ export interface PersonalInfo {
   telefone: string;
   endereco: string;
   resumo: string;
+  imagem?: string;
   linkedin?: string;
   github?: string;
   whatsapp?: string;
