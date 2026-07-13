@@ -22,7 +22,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         <input
           ref={ref}
           id={inputId}
-          className={`w-full px-4 py-3 bg-vaporwave-white-dark dark:bg-vaporwave-black-light border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:border-vaporwave-purple transition-colors ${
+          className={`w-full px-4 py-3 bg-vaporwave-white-dark dark:bg-vaporwave-black-light border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:border-vaporwave-purple transition-colors text-vaporwave-black dark:text-vaporwave-white ${
             error ? 'border-red-500' : ''
           } ${className}`}
           aria-invalid={error ? 'true' : 'false'}

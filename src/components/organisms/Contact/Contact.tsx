@@ -178,7 +178,7 @@ export const Contact = () => {
                 value={formData.mensagem}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className={`w-full px-4 py-3 bg-vaporwave-white-dark dark:bg-vaporwave-black-light border rounded-lg focus:outline-none focus:border-vaporwave-purple resize-none ${
+                className={`w-full px-4 py-3 bg-vaporwave-white-dark dark:bg-vaporwave-black-light border rounded-lg focus:outline-none focus:border-vaporwave-purple resize-none text-vaporwave-black dark:text-vaporwave-white ${
                   touched.mensagem && errors.mensagem
                     ? 'border-red-500'
                     : 'border-gray-300 dark:border-gray-600'

@@ -62,3 +62,5 @@ storybook-static/
 
 # Misc
 *.local
+Context/
+SPEC.md
