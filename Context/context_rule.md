@@ -1,1 +1,0 @@
-Após cada implementação que você fizer nesse repositório, crie um arquivo MD no diretório /home/eddiewav/Documentos/github_repositories/vaporwaveOnlinePortifolio/Context que seja tudo oq implementou nessa ultima atividade.

@@ -34,7 +34,7 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
       {project && (
         <dialog
           ref={dialogRef}
-          className="backdrop:bg-black/60 bg-transparent rounded-lg p-0 max-w-2xl w-full"
+          className="fixed inset-0 m-auto backdrop:bg-black/60 bg-transparent rounded-lg p-0 max-w-2xl w-full h-fit max-h-fit"
           onClick={(e) => {
             if (e.target === dialogRef.current) onClose();
           }}

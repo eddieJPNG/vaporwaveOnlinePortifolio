@@ -12,11 +12,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variants = {
       primary:
-        'bg-vaporwave-purple text-white hover:bg-vaporwave-purple-dark focus:ring-vaporwave-purple',
+        'bg-vaporwave-purple text-white hover:bg-vaporwave-purple-dark focus:ring-vaporwave-purple dark:bg-vaporwave-purple dark:hover:bg-vaporwave-purple-dark',
       secondary:
-        'bg-transparent border-2 border-vaporwave-purple text-vaporwave-purple hover:bg-vaporwave-purple/10 focus:ring-vaporwave-purple',
+        'bg-transparent border-2 border-vaporwave-purple text-vaporwave-purple hover:bg-vaporwave-purple/10 focus:ring-vaporwave-purple dark:border-vaporwave-purple dark:text-vaporwave-purple dark:hover:bg-vaporwave-purple/20',
       ghost:
-        'bg-transparent text-vaporwave-purple hover:bg-vaporwave-purple/10 focus:ring-vaporwave-purple',
+        'bg-transparent text-vaporwave-purple hover:bg-vaporwave-purple/10 focus:ring-vaporwave-purple dark:text-vaporwave-purple dark:hover:bg-vaporwave-purple/20',
     };
 
     const sizes = {
