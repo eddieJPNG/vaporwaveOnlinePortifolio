@@ -37,7 +37,7 @@ export const Hero = () => {
         src={heroRoman}
         alt=""
         aria-hidden="true"
-        className="absolute top-10 right-10 w-64 h-110 md:w-64 md:h-110 opacity-60 dark:opacity-40 pointer-events-none"
+        className="absolute top-10 right-10 w-64 h-[27.5rem] md:w-64 md:h-[27.5rem] opacity-60 dark:opacity-40 pointer-events-none"
       />
       <motion.div
         className="relative z-10 text-center"
