@@ -1,4 +1,4 @@
-import { type ElementType, forwardRef, type ComponentPropsWithoutRef } from 'react';
+import { type ElementType, forwardRef, type ComponentPropsWithoutRef, type JSX } from 'react';
 
 type PolymorphicRef<C extends ElementType> = ComponentPropsWithoutRef<C>['ref'];
 
@@ -16,7 +16,7 @@ const variantStyles = {
   lead: 'text-lg text-gray-600 dark:text-gray-300',
 };
 
-export const Text = forwardRef(
+const TextComponent = forwardRef(
   <C extends ElementType = 'p'>(
     { variant = 'body', as, className = '', children, ...props }: TextProps<C>,
     ref: PolymorphicRef<C>
@@ -28,8 +28,10 @@ export const Text = forwardRef(
       </Component>
     );
   }
-) as <C extends ElementType = 'p'>(
+);
+
+TextComponent.displayName = 'Text';
+
+export const Text = TextComponent as <C extends ElementType = 'p'>(
   props: TextProps<C> & { ref?: PolymorphicRef<C> }
 ) => JSX.Element;
-
-Text.displayName = 'Text';

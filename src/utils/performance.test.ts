@@ -1,6 +1,13 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { reportWebVitals } from './performance';
 
+const createMockEntryList = (entries: unknown[]): PerformanceObserverEntryList =>
+  ({
+    getEntries: () => entries,
+    getEntriesByName: () => [],
+    getEntriesByType: () => entries,
+  }) as PerformanceObserverEntryList;
+
 describe('reportWebVitals', () => {
   let originalWindow: typeof globalThis.window;
 
@@ -75,7 +82,6 @@ describe('reportWebVitals', () => {
   describe('sendToAnalytics', () => {
     it('does not throw when gtag is not defined', () => {
       const originalGtag = window.gtag;
-      // @ts-expect-error - Removing gtag for test
       delete window.gtag;
 
       expect(() => reportWebVitals()).not.toThrow();
@@ -102,10 +108,10 @@ describe('reportWebVitals', () => {
       expect(callbacks.length).toBe(3);
 
       const lcpCallback = callbacks[0];
-      const lcpList = {
-        getEntries: () => [{ loadTime: 1800, renderTime: 1600, startTime: 1800 }],
-      } as PerformanceObserverEntryList;
-      lcpCallback(lcpList, {} as PerformanceObserver);
+      lcpCallback(
+        createMockEntryList([{ loadTime: 1800, renderTime: 1600, startTime: 1800 }]),
+        {} as PerformanceObserver
+      );
 
       expect(onMetric).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -132,9 +138,7 @@ describe('reportWebVitals', () => {
       reportWebVitals(onMetric);
 
       callbacks[0](
-        {
-          getEntries: () => [{ loadTime: 3000, renderTime: 2800, startTime: 3000 }],
-        } as PerformanceObserverEntryList,
+        createMockEntryList([{ loadTime: 3000, renderTime: 2800, startTime: 3000 }]),
         {} as PerformanceObserver
       );
 
@@ -159,9 +163,7 @@ describe('reportWebVitals', () => {
       reportWebVitals(onMetric);
 
       callbacks[0](
-        {
-          getEntries: () => [{ loadTime: 5000, renderTime: 4800, startTime: 5000 }],
-        } as PerformanceObserverEntryList,
+        createMockEntryList([{ loadTime: 5000, renderTime: 4800, startTime: 5000 }]),
         {} as PerformanceObserver
       );
 
@@ -186,9 +188,7 @@ describe('reportWebVitals', () => {
       reportWebVitals(onMetric);
 
       callbacks[1](
-        {
-          getEntries: () => [{ hadRecentInput: false, value: 0.05 }],
-        } as PerformanceObserverEntryList,
+        createMockEntryList([{ hadRecentInput: false, value: 0.05 }]),
         {} as PerformanceObserver
       );
 
@@ -213,9 +213,7 @@ describe('reportWebVitals', () => {
       reportWebVitals(onMetric);
 
       callbacks[1](
-        {
-          getEntries: () => [{ hadRecentInput: true, value: 0.5 }],
-        } as PerformanceObserverEntryList,
+        createMockEntryList([{ hadRecentInput: true, value: 0.5 }]),
         {} as PerformanceObserver
       );
 
@@ -238,9 +236,7 @@ describe('reportWebVitals', () => {
       reportWebVitals(onMetric);
 
       callbacks[1](
-        {
-          getEntries: () => [{ hadRecentInput: false, value: 0.2 }],
-        } as PerformanceObserverEntryList,
+        createMockEntryList([{ hadRecentInput: false, value: 0.2 }]),
         {} as PerformanceObserver
       );
 
@@ -265,9 +261,7 @@ describe('reportWebVitals', () => {
       reportWebVitals(onMetric);
 
       callbacks[1](
-        {
-          getEntries: () => [{ hadRecentInput: false, value: 0.3 }],
-        } as PerformanceObserverEntryList,
+        createMockEntryList([{ hadRecentInput: false, value: 0.3 }]),
         {} as PerformanceObserver
       );
 
@@ -291,12 +285,7 @@ describe('reportWebVitals', () => {
       const onMetric = vi.fn();
       reportWebVitals(onMetric);
 
-      callbacks[2](
-        {
-          getEntries: () => [{ startTime: 1200 }],
-        } as PerformanceObserverEntryList,
-        {} as PerformanceObserver
-      );
+      callbacks[2](createMockEntryList([{ startTime: 1200 }]), {} as PerformanceObserver);
 
       expect(onMetric).toHaveBeenCalledWith(
         expect.objectContaining({ name: 'FCP', value: 1200, rating: 'good' })
@@ -321,9 +310,7 @@ describe('reportWebVitals', () => {
       reportWebVitals();
 
       callbacks[0](
-        {
-          getEntries: () => [{ loadTime: 1000, renderTime: 800, startTime: 1000 }],
-        } as PerformanceObserverEntryList,
+        createMockEntryList([{ loadTime: 1000, renderTime: 800, startTime: 1000 }]),
         {} as PerformanceObserver
       );
 
@@ -357,9 +344,7 @@ describe('reportWebVitals', () => {
       reportWebVitals();
 
       callbacks[1](
-        {
-          getEntries: () => [{ hadRecentInput: false, value: 0.05 }],
-        } as PerformanceObserverEntryList,
+        createMockEntryList([{ hadRecentInput: false, value: 0.05 }]),
         {} as PerformanceObserver
       );
 
@@ -370,7 +355,6 @@ describe('reportWebVitals', () => {
 
     it('does not send to analytics when gtag is not defined', () => {
       const originalGtag = window.gtag;
-      // @ts-expect-error - Removing gtag for test
       delete window.gtag;
 
       const callbacks: PerformanceObserverCallback[] = [];
@@ -387,9 +371,7 @@ describe('reportWebVitals', () => {
       expect(() => {
         reportWebVitals();
         callbacks[0](
-          {
-            getEntries: () => [{ loadTime: 1000, renderTime: 800, startTime: 1000 }],
-          } as PerformanceObserverEntryList,
+          createMockEntryList([{ loadTime: 1000, renderTime: 800, startTime: 1000 }]),
           {} as PerformanceObserver
         );
       }).not.toThrow();

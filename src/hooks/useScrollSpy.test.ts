@@ -20,6 +20,7 @@ describe('useScrollSpy', () => {
         unobserve: vi.fn(),
         root: null,
         rootMargin: '',
+        scrollMargin: '',
         thresholds: [],
         takeRecords: vi.fn(() => []),
       };
