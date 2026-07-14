@@ -13,7 +13,7 @@ export const Card = ({
   className = '',
   ...props
 }: CardProps) => {
-  const baseStyles = 'rounded-lg transition-all';
+  const baseStyles = 'rounded-lg transition-shadow';
 
   const variants = {
     default: 'bg-white dark:bg-vaporwave-black-light border border-gray-200 dark:border-gray-700',

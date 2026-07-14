@@ -51,7 +51,7 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
               <img
                 src={project.imagem}
                 alt={project.titulo}
-                className="w-full h-48 object-cover rounded-t-lg mb-4 -mx-6 -mt-6 w-[calc(100%+3rem)]"
+                className="h-48 object-cover rounded-t-lg mb-4 -mx-6 -mt-6 w-[calc(100%+3rem)]"
               />
             )}
             <div className="flex justify-between items-start mb-4">

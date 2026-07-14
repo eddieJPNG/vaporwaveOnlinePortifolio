@@ -1,5 +1,6 @@
 import { type PersonalInfo } from '../types';
 import { getProfileImage } from '../utils/iconImports';
+import { SOCIAL_LINKS } from '../utils/constants';
 
 export const personalInfo: PersonalInfo = {
   nome: 'Edson Rocha da Silva',
@@ -11,7 +12,7 @@ export const personalInfo: PersonalInfo = {
   resumo:
     'Desenvolvedor Back-End com foco em Python e Node.js, atuando na criação de APIs, sistemas web e integração com banco de dados. Tenho base em Full Stack, com conhecimento em Front-end, o que facilita comunicação entre camadas e entrega de soluções completas. Sempre com foco na escalabilidade do projeto, integração contínua de trabalho e resolução de problemas.',
   imagem: getProfileImage(),
-  linkedin: 'https://linkedin.com/in/edson-rocha-da-silva-300030379',
-  github: 'https://github.com/eddieJPNG',
-  whatsapp: 'https://wa.me/qr/OZ354YNZCNIAG1',
+  linkedin: SOCIAL_LINKS.linkedin,
+  github: SOCIAL_LINKS.github,
+  whatsapp: SOCIAL_LINKS.whatsapp,
 };

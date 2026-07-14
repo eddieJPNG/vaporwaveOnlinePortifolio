@@ -2,11 +2,15 @@ import { useState, useEffect, useCallback } from 'react';
 
 type Theme = 'light' | 'dark';
 
+const isValidTheme = (value: string): value is Theme => {
+  return value === 'light' || value === 'dark';
+};
+
 export const useTheme = () => {
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('theme') as Theme;
-      if (savedTheme) {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme && isValidTheme(savedTheme)) {
         return savedTheme;
       }
       return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';

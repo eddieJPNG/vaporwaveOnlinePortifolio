@@ -47,6 +47,7 @@ export const Projects = () => {
                 onClick={() => setSelectedProject(project)}
                 role="button"
                 tabIndex={0}
+                aria-label={`Ver detalhes do projeto ${project.titulo}`}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
@@ -58,7 +59,7 @@ export const Projects = () => {
                   <img
                     src={project.imagem}
                     alt={project.titulo}
-                    className="w-full h-40 object-cover rounded-t-lg mb-4 -mx-6 -mt-6 w-[calc(100%+3rem)]"
+                    className="h-40 object-cover rounded-t-lg mb-4 -mx-6 -mt-6 w-[calc(100%+3rem)]"
                   />
                 )}
                 <h3 className="text-xl font-bold text-vaporwave-purple mb-2">{project.titulo}</h3>

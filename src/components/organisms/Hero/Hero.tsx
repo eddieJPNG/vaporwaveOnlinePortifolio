@@ -71,7 +71,7 @@ export const Hero = () => {
             Contato
           </a>
           <a
-            href="/currículoEdsonRocha(23_06_26).pdf"
+            href="/curriculo-edson-rocha.pdf"
             download="Edson_Rocha_Desenvolvedor_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"

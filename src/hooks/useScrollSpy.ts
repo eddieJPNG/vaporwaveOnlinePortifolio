@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 export const useScrollSpy = (ids: string[], offset = 100) => {
   const [activeId, setActiveId] = useState<string>('');
+  const idsKey = useMemo(() => JSON.stringify(ids), [ids]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,7 +28,7 @@ export const useScrollSpy = (ids: string[], offset = 100) => {
     return () => {
       observer.disconnect();
     };
-  }, [ids, offset]);
+  }, [idsKey, offset]);
 
   return activeId;
 };

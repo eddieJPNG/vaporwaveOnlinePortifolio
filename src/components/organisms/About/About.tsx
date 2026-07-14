@@ -62,7 +62,7 @@ export const About = () => {
               WhatsApp
             </a>
             <a
-              href="/vaporwaveOnlinePortifolio/public/currículoEdsonRocha(23_06_26).pdf"
+              href="/curriculo-edson-rocha.pdf"
               download="Edson_Rocha_Desenvolvedor_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"

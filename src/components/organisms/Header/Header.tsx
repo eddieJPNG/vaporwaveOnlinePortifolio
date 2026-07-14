@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Button } from '../../atoms';
 
 export interface HeaderProps {
@@ -8,6 +8,8 @@ export interface HeaderProps {
 
 export const Header = ({ onThemeToggle, isDark = false }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const navItems = [
     { label: 'Início', href: '#home' },
@@ -17,6 +19,48 @@ export const Header = ({ onThemeToggle, isDark = false }: HeaderProps) => {
     { label: 'Experiência', href: '#experience' },
     { label: 'Contato', href: '#contact' },
   ];
+
+  const closeMenu = useCallback(() => {
+    setIsMenuOpen(false);
+    menuButtonRef.current?.focus();
+  }, []);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeMenu();
+        return;
+      }
+
+      if (e.key !== 'Tab') return;
+
+      const menu = menuRef.current;
+      if (!menu) return;
+
+      const focusableElements = menu.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      );
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement?.focus();
+        }
+      } else {
+        if (document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement?.focus();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isMenuOpen, closeMenu]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-vaporwave-black/90 backdrop-blur-sm">
@@ -49,9 +93,12 @@ export const Header = ({ onThemeToggle, isDark = false }: HeaderProps) => {
 
           {/* Mobile Menu Button */}
           <button
+            ref={menuButtonRef}
             className="md:hidden text-gray-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isMenuOpen ? (
@@ -75,13 +122,17 @@ export const Header = ({ onThemeToggle, isDark = false }: HeaderProps) => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-gray-700">
+          <div
+            ref={menuRef}
+            id="mobile-menu"
+            className="md:hidden mt-4 pb-4 border-t border-gray-700"
+          >
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 className="block py-2 text-gray-300 hover:text-vaporwave-cyan transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={closeMenu}
               >
                 {item.label}
               </a>

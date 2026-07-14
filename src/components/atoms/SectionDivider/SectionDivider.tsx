@@ -18,6 +18,8 @@ export const SectionDivider = forwardRef<HTMLDivElement, SectionDividerProps>(
       return (
         <div
           ref={ref}
+          role="separator"
+          aria-orientation="horizontal"
           className={`w-full h-px bg-gradient-to-r from-transparent via-vaporwave-purple/30 to-transparent ${className}`}
           {...props}
         />
@@ -25,17 +27,18 @@ export const SectionDivider = forwardRef<HTMLDivElement, SectionDividerProps>(
     }
 
     const imageSrc = variant === 'roman' ? romanBg : pointBg;
-    const imageAlt = variant === 'roman' ? 'Coluna decorativa' : 'Ponto decorativo';
 
     return (
       <div
         ref={ref}
+        role="separator"
+        aria-orientation="horizontal"
         className={`flex justify-center items-center ${variantStyles[variant]} ${className}`}
         {...props}
       >
         <img
           src={imageSrc}
-          alt={imageAlt}
+          alt=""
           aria-hidden="true"
           className={`opacity-30 dark:opacity-20 pointer-events-none ${
             variant === 'roman' ? 'w-16 h-16' : 'w-8 h-8'
