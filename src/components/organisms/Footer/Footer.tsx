@@ -39,6 +39,15 @@ export const Footer = () => {
             >
               Email
             </a>
+            <a
+              href="/currículoEdsonRocha(23_06_26).pdf"
+              download="Edson_Rocha_Desenvolvedor_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-vaporwave-cyan transition-colors text-sm"
+            >
+              Currículo
+            </a>
           </div>
         </div>
       </div>
