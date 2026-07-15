@@ -8,6 +8,11 @@
 
 Portfólio profissional online com estética vaporwave imersivo, desenvolvido com React, TypeScript e Vite.
 
+<img 
+  src="src/assets/images/projects/portfolio.png"
+  alt="Portfolio-image"
+  />
+
 ## Descrição
 
 O **Vaporwave Online Portfolio** é uma aplicação web single-page application (SPA) que funciona como cartão de visitas digital avançado. Apresenta o perfil profissional, habilidades técnicas e projetos de desenvolvimento web, backend e blockchain de Edson Rocha da Silva, combinando design vaporwave imersivo com funcionalidade profissional.
