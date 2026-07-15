@@ -4,8 +4,7 @@ import { SOCIAL_LINKS } from '../utils/constants';
 
 export const personalInfo: PersonalInfo = {
   nome: 'Edson Rocha da Silva',
-  cargo:
-    'Desenvolvedor Back-End Júnior | Desenvolvedor Python | Desenvolvedor Web | Desenvolvedor NodeJS',
+  cargo: 'Desenvolvedor Back-End | Desenvolvedor Python | Desenvolvedor Web | Desenvolvedor NodeJS',
   email: 'rochaedsonn12@gmail.com',
   telefone: '+55 86 994268973',
   endereco: 'Ilha Grande, Piauí, BR',

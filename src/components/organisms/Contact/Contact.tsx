@@ -103,6 +103,13 @@ export const Contact = () => {
       <div className="max-w-xl mx-auto">
         <AnimatedSection>
           <div className="flex items-center justify-center gap-3 mb-12">
+            <h2 className="text-3xl font-bold text-vaporwave-black dark:text-vaporwave-white">
+              Vamos trabalhar juntos?
+            </h2>
+          </div>
+        </AnimatedSection>
+        <AnimatedSection>
+          <div className="flex items-center justify-center gap-3 mb-12">
             <img src={chatIcon} alt="" aria-hidden="true" className="w-8 h-8" />
             <h2 className="text-3xl font-bold text-vaporwave-black dark:text-vaporwave-white">
               Contato
