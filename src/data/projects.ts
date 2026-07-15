@@ -61,7 +61,7 @@ export const projects: Project[] = [
       'Portfólio profissional online com estética vaporwave imersivo, desenvolvido com React, TypeScript e Vite.',
     descricaoLonga:
       'O Vaporwave Online Portfolio é uma aplicação web single-page application (SPA) que funciona como cartão de visitas digital avançado. Apresenta o perfil profissional, habilidades técnicas e projetos de desenvolvimento web, backend e blockchain de Edson Rocha da Silva, combinando design vaporwave imersivo com funcionalidade profissional.',
-    tecnologias: ['Python', 'Fastapi', 'Sqlalchemy', 'Sqlite'],
+    tecnologias: ['React', 'Typescript', 'Vite', 'Tailwind', 'CSS3', 'Vitest'],
     periodo: 'mai. 2026 — jul. 2026',
     githubUrl: 'https://github.com/eddieJPNG/vaporwaveOnlinePortifolio',
     imagem: getProjectImage('portfolio'),
