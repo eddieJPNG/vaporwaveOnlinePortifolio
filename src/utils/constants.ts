@@ -47,6 +47,7 @@ export const SOCIAL_LINKS = {
   github: 'https://github.com/eddieJPNG',
   linkedin: 'https://linkedin.com/in/edson-rocha-da-silva-300030379',
   whatsapp: 'https://wa.me/qr/OZ354YNZCNIAG1',
+  githubProjects: 'https://github.com/eddieJPNG?tab=repositories',
 } as const;
 
 export const ANIMATION_DURATIONS = {

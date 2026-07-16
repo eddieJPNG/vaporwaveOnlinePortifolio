@@ -5,6 +5,9 @@ import { Filter } from '../../molecules/Filter';
 import { ProjectModal } from '../../molecules/ProjectModal';
 import { AnimatedSection } from '../../atoms/AnimatedSection';
 import { type Project } from '../../../types';
+import { SOCIAL_LINKS } from '../../../utils/constants';
+import icebergIcon from '../../../assets/icons-decorative/iceberg.png';
+import { motion } from 'framer-motion';
 
 const PROJECT_CATEGORIES = [...new Set(projects.map((p) => p.categoria))] as const;
 
@@ -24,9 +27,12 @@ export const Projects = () => {
     >
       <div className="max-w-6xl mx-auto">
         <AnimatedSection>
-          <h2 className="text-3xl font-bold text-center text-vaporwave-black dark:text-vaporwave-white mb-12">
-            Projetos
-          </h2>
+          <div className="flex items-center justify-center gap-3 mb-12">
+            <img src={icebergIcon} alt="" aria-hidden="true" className="w-8 h-8" />
+            <h2 className="text-3xl font-bold text-vaporwave-black dark:text-vaporwave-white">
+              Projetos
+            </h2>
+          </div>
         </AnimatedSection>
 
         <AnimatedSection delay={0.1}>
@@ -81,6 +87,16 @@ export const Projects = () => {
             </AnimatedSection>
           ))}
         </div>
+        <motion.div className="flex gap-4 justify-center mt-12">
+          <a
+            href={SOCIAL_LINKS.githubProjects}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-6 py-3 bg-vaporwave-purple text-white rounded-lg hover:bg-vaporwave-purple-dark transition-colors font-medium text-lg"
+          >
+            Ver Projetos no Github
+          </a>
+        </motion.div>
       </div>
 
       <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />

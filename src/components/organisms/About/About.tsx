@@ -70,6 +70,12 @@ export const About = () => {
             >
               Currículo
             </a>
+            <a
+              href={`mailto:${personalInfo.email}`}
+              className="text-vaporwave-purple hover:text-vaporwave-purple-dark transition-colors"
+            >
+              Email
+            </a>
           </div>
         </AnimatedSection>
       </div>

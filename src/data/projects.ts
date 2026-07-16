@@ -34,7 +34,7 @@ export const projects: Project[] = [
     descricao: 'Sistema de monitoramento de convênios de estágio',
     descricaoLonga:
       'Aplicação desktop para gerenciamento de convênios de estágio da Universidade Estadual do Piauí (UESPI), com painéis distintos por perfil de acesso, geração de documentos e controle de vencimentos.',
-    tecnologias: ['Python', 'FastAPI', 'SQLAlchemy', 'Flask', 'Flutter', 'MySQL'],
+    tecnologias: ['Python', 'FastAPI', 'SQLAlchemy', 'Flask', 'Flet', 'MySQL'],
     periodo: 'mai. 2026 — jun. 2026',
     githubUrl: 'https://github.com/pedroaguiarcd/sistema-convenios',
     imagem: getProjectImage('convmonitor'),

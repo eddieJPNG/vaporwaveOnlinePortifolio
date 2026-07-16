@@ -1,14 +1,18 @@
 import { experiences } from '../../../data/experiences';
 import { AnimatedSection } from '../../atoms/AnimatedSection';
+import shapeIcon from '../../../assets/icons-decorative/shape.png';
 
 export const Experience = () => {
   return (
     <section id="experience" className="py-20 px-4">
       <div className="max-w-4xl mx-auto">
         <AnimatedSection>
-          <h2 className="text-3xl font-bold text-center text-vaporwave-black dark:text-vaporwave-white mb-12">
-            Experiência
-          </h2>
+          <div className="flex items-center justify-center gap-3 mb-12">
+            <img src={shapeIcon} alt="" aria-hidden="true" className="w-8 h-8" />
+            <h2 className="text-3xl font-bold text-vaporwave-black dark:text-vaporwave-white">
+              Experiência
+            </h2>
+          </div>
         </AnimatedSection>
         <div className="relative">
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-vaporwave-purple/30 -translate-x-1/2" />

@@ -3,6 +3,7 @@ import { SKILL_CATEGORIES } from '../../../utils/constants';
 import { SkillBadge } from '../../molecules';
 import { AnimatedSection } from '../../atoms/AnimatedSection';
 import tokyo from '../../../assets/backgrounds/tokyo.gif';
+import addiIcon from '../../../assets/icons-decorative/additive-synthesis.png';
 
 export const Skills = () => {
   return (
@@ -15,9 +16,12 @@ export const Skills = () => {
       />
       <div className="max-w-6xl mx-auto">
         <AnimatedSection>
-          <h2 className="text-3xl font-bold text-center text-vaporwave-black dark:text-vaporwave-white mb-12">
-            Habilidades
-          </h2>
+          <div className="flex items-center justify-center gap-3 mb-12">
+            <img src={addiIcon} alt="" aria-hidden="true" className="w-8 h-8" />
+            <h2 className="text-3xl font-bold text-vaporwave-black dark:text-vaporwave-white">
+              Habilidades
+            </h2>
+          </div>
         </AnimatedSection>
         {SKILL_CATEGORIES.map((category, categoryIndex) => {
           const categorySkills = skills.filter((s) => s.categoria === category);

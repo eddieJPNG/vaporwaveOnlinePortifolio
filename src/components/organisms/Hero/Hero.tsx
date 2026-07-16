@@ -77,7 +77,7 @@ export const Hero = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-6 py-3 border-2 border-vaporwave-purple text-vaporwave-purple rounded-lg hover:bg-vaporwave-purple/10 transition-colors font-medium text-lg"
           >
-            Currículo
+            Baixar Currículo
           </a>
         </motion.div>
       </motion.div>

@@ -9,7 +9,7 @@ export const skills: Skill[] = [
     categoria: 'Back-end',
     icone: '🐍',
     iconePath: getSkillIcon('python'),
-    nivel: 'Avançado',
+    nivel: 'Intermediário',
   },
   {
     id: 'nodejs',
@@ -17,7 +17,7 @@ export const skills: Skill[] = [
     categoria: 'Back-end',
     icone: '🟢',
     iconePath: getSkillIcon('nodejs'),
-    nivel: 'Avançado',
+    nivel: 'Intermediário',
   },
   {
     id: 'typescript',
@@ -85,7 +85,7 @@ export const skills: Skill[] = [
     categoria: 'Front-end',
     icone: '🌐',
     iconePath: getSkillIcon('html5'),
-    nivel: 'Avançado',
+    nivel: 'Intermediário',
   },
   {
     id: 'css3',
@@ -93,7 +93,7 @@ export const skills: Skill[] = [
     categoria: 'Front-end',
     icone: '🎨',
     iconePath: getSkillIcon('css3'),
-    nivel: 'Avançado',
+    nivel: 'Básico',
   },
   {
     id: 'react',
@@ -101,7 +101,7 @@ export const skills: Skill[] = [
     categoria: 'Front-end',
     icone: '⚛️',
     iconePath: getSkillIcon('react'),
-    nivel: 'Intermediário',
+    nivel: 'Básico',
   },
   {
     id: 'bootstrap',
@@ -117,7 +117,15 @@ export const skills: Skill[] = [
     categoria: 'Front-end',
     icone: '🟨',
     iconePath: getSkillIcon('javascript'),
-    nivel: 'Avançado',
+    nivel: 'Intermediário',
+  },
+  {
+    id: 'tailwind',
+    nome: 'Tailwind',
+    categoria: 'Front-end',
+    icone: '🍃',
+    iconePath: getSkillIcon('tailwind'),
+    nivel: 'Básico',
   },
 
   // Blockchain
@@ -127,7 +135,7 @@ export const skills: Skill[] = [
     categoria: 'Blockchain',
     icone: '💎',
     iconePath: getSkillIcon('solidity'),
-    nivel: 'Intermediário',
+    nivel: 'Básico',
   },
   {
     id: 'move',
@@ -135,7 +143,7 @@ export const skills: Skill[] = [
     categoria: 'Blockchain',
     icone: '🔄',
     iconePath: getSkillIcon('move'),
-    nivel: 'Intermediário',
+    nivel: 'Básico',
   },
   {
     id: 'metamask',

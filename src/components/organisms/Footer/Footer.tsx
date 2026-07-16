@@ -41,6 +41,14 @@ export const Footer = () => {
             >
               Currículo
             </a>
+            <a
+              href={SOCIAL_LINKS.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-vaporwave-cyan transition-colors text-sm"
+            >
+              WhatsApp
+            </a>
           </div>
         </div>
       </div>
